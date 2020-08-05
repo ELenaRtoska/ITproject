@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ITproject.Models.TimeSlot>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeSlotStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Slot)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.buildingId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.performanceId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.TimeSlotStatus)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Slot)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.buildingId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.performanceId)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Slot }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Slot }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Slot })
+    </td>
+</tr>
+}
+
+</table>
